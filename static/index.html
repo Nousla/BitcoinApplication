@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bitcoin Application</title>
+    <link rel="stylesheet" 
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+            integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
+            crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" 
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" 
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" 
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" 
+            crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="rounded-bottom bg-white shadow-sm">
+            <div class="container-fluid p-3 bg-info">
+                <h1 class="text-white">Bitcoin Application</h1>
+            </div>
+            <div class="p-4">
+                <h4 class="text-black border-bottom">Balance</h4>
+                <div class="d-flex">
+                    <p class="text-black">Amount:&nbsp</p>
+                    <p id="balance" class="text-black">0</p>
+                    <p class="text-black">&nbsp&#x20BF</p>
+                </div>
+                <button type="button" id="update-balance" class="btn btn-outline-primary">Update</button>
+            </div>
+            <div class="pb-4 pl-4 pr-4">
+                <h4 class="text-black border-bottom">New Address</h4>
+                <div class="d-flex">
+                    <p class="text-black">Address:&nbsp</p>
+                    <p id="new-address" class="text-black"></p>
+                </div>
+                <button type="button" id="create-address" class="btn btn-outline-primary">Create</button>
+            </div>
+            <div class="pb-4 pl-4 pr-4">
+                <h4 class="text-black border-bottom">Send Bitcoins</h4>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Address</span>
+                    </div>
+                    <input type="text" id="send-bitcoins-address" class="form-control" placeholder="" aria-label="Address" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Amount</span>
+                    </div>
+                    <input type="text" id="send-bitcoins-amount" class="form-control" placeholder="0" aria-label="Amount" aria-describedby="basic-addon1">
+                </div>
+                <div class="d-flex">
+                    <button type="button" id="send-bitcoins" class="btn btn-outline-primary">Send</button>
+                    <p id="send-done" class="m-2 text-success">Done!</p>
+                </div>
+            </div>
+            <div class="pb-4 pl-4 pr-4">
+                <h4 class="text-black border-bottom">Unspent Transactions</h4>
+                <div class="mb-2">
+                    <button type="button" id="update-unspent-transactions"class="btn btn-outline-primary">Update</button>
+                    <input type="checkbox" id="unspent-transactions-unconfirmed">
+                    <label class="form-check-label" for="unspent-transactions-unconfirmed">Include unconfirmed transactions</label>
+                </div>
+                <ul id="unspent-transactions" class="list-group">
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
